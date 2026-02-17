@@ -1,0 +1,924 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zulfiqar Younus | Game Developer Portfolio</title>
+    <style>
+            /* Reset */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                background: #0d1117;
+                color: #e6edf3;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            img, iframe {
+                max-width: 100%;
+                border-radius: 10px;
+            }
+
+            /* Navbar */
+            nav {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12px 20px;
+                background: #161b22;
+                color: #fff;
+                border-bottom: 1px solid #30363d;
+                backdrop-filter: saturate(120%) blur(6px);
+            }
+
+                nav .left a {
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: #00ffae;
+                }
+
+                nav .right a {
+                    margin-left: 15px;
+                    padding: 8px 14px;
+                    border-radius: 6px;
+                    font-size: 14px;
+                    transition: 0.3s;
+                }
+
+                nav .btn-hire {
+                    background: #00ffae;
+                    color: #111;
+                }
+
+                    nav .btn-hire:hover {
+                        background: #00cc88;
+                    }
+
+                nav .btn-resume {
+                    background: #30363d;
+                    color: #fff;
+                }
+
+                    nav .btn-resume:hover {
+                        background: #444;
+                    }
+
+            /* Sections */
+            section {
+                padding: 60px 20px;
+                max-width: 1100px;
+                margin: auto;
+            }
+
+            h1, h2, h3 {
+                margin-bottom: 20px;
+                font-weight: bold;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            h2 {
+                font-size: 28px;
+                color: #00ffae;
+            }
+
+            h3 {
+                color: #00ffae;
+            }
+
+            /* Hero */
+            /*  #hero{text-align:center; padding:100px 20px;}
+        #hero p{max-width:700px; margin:auto; font-size:18px; color:#c9d1d9;}*/
+
+            .stats {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                margin-top: 30px;
+                flex-wrap: wrap;
+            }
+
+            .stat {
+                background: #161b22;
+                padding: 20px 30px;
+                border-radius: 10px;
+                text-align: center;
+                min-width: 150px;
+                border: 1px solid #30363d;
+            }
+
+                .stat h3 {
+                    font-size: 24px;
+                    margin-bottom: 5px;
+                    color: #00ffae;
+                }
+            /* Hero Card */
+            .hero-card {
+                background: #161b22;
+                border: 1px solid #30363d;
+                border-radius: 16px;
+                padding: 40px;
+                max-width: 900px;
+                margin: auto;
+                box-shadow: 0 0 25px rgba(0,0,0,0.5);
+                text-align: left;
+            }
+
+            .hero-tags {
+                font-size: 14px;
+                color: #00ffae;
+                letter-spacing: 1px;
+                margin-bottom: 14px;
+            }
+
+            .hero-card h1 {
+                font-size: 32px;
+                line-height: 1.3;
+                margin-bottom: 20px;
+            }
+
+            .hero-card .highlight {
+                border-bottom: 2px solid #00ffae;
+            }
+
+            .hero-desc {
+                font-size: 16px;
+                color: #c9d1d9;
+                margin-bottom: 20px;
+            }
+
+            .hero-skills {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 25px;
+            }
+
+                .hero-skills span {
+                    background: #21262d;
+                    color: #e6edf3;
+                    padding: 6px 12px;
+                    border-radius: 20px;
+                    font-size: 13px;
+                }
+
+            .hero-cta a {
+                display: inline-block;
+                margin-right: 12px;
+                padding: 10px 18px;
+                border-radius: 8px;
+                font-weight: bold;
+                font-size: 14px;
+            }
+
+            .btn-main {
+                background: #00ffae;
+                color: #111;
+            }
+
+                .btn-main:hover {
+                    background: #00d294;
+                }
+
+            .btn-secondary {
+                background: #30363d;
+                color: #e6edf3;
+            }
+
+                .btn-secondary:hover {
+                    background: #444;
+                }
+
+
+
+
+
+
+            /* Projects */
+            .projects-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+                gap: 20px;
+                margin-top: 20px;
+            }
+
+            .project-card {
+                background: #161b22;
+                padding: 20px;
+                border-radius: 12px;
+                border: 1px solid #30363d;
+                transition: 0.3s;
+            }
+
+                .project-card:hover {
+                    transform: translateY(-4px);
+                    border-color: #00ffae;
+                }
+
+            .project-icon {
+                font-size: 32px;
+                margin-bottom: 10px;
+            }
+
+            .project-card p {
+                color: #c9d1d9;
+            }
+
+            .tags {
+                margin-top: 10px;
+            }
+
+                .tags span {
+                    display: inline-block;
+                    margin: 3px;
+                    padding: 4px 10px;
+                    background: #21262d;
+                    border-radius: 20px;
+                    font-size: 12px;
+                    color: #00ffae;
+                }
+
+            .btn-group {
+                margin-top: 12px;
+            }
+
+            .btn-icon {
+                display: inline-block;
+                margin: 4px;
+                padding: 6px 12px;
+                font-size: 14px;
+                background: #21262d;
+                color: #00ffae;
+                border-radius: 6px;
+                transition: 0.3s;
+            }
+
+                .btn-icon:hover {
+                    background: #00ffae;
+                    color: #111;
+                }
+
+            .thumb {
+                height: 160px;
+                background: linear-gradient(120deg, rgba(122,162,255,.18), rgba(99,230,190,.18)), linear-gradient(180deg, #12192a, #0f1420);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 46px;
+                color: #9db8ff;
+                border-bottom: 1px solid var(--line)
+            }
+
+                .thumb img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover; /* ensures the gif fills the frame without distortion */
+                }
+
+        .project-card .thumb video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .project-card .thumb {
+            overflow: hidden;
+            position: relative;
+            /* Your existing .thumb styles remain */
+            height: 160px;
+            background: linear-gradient(120deg, rgba(122,162,255,.18), rgba(99,230,190,.18)), linear-gradient(180deg, #12192a, #0f1420);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 46px;
+            color: #9db8ff;
+            border-bottom: 1px solid var(--line);
+        }
+
+
+            /* Timeline */
+            .timeline {
+                border-left: 3px solid #00ffae;
+                margin-left: 15px;
+                padding-left: 20px;
+            }
+
+                .timeline div {
+                    margin-bottom: 25px;
+                }
+
+                .timeline h4 {
+                    margin-bottom: 6px;
+                    color: #e6edf3;
+                }
+
+                .timeline p {
+                    color: #c9d1d9;
+                }
+
+            /* Skills */
+            .skill-groups {
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                gap: 14px
+            }
+
+            .skill-card {
+                border: 1px solid var(--line);
+                border-radius: 12px;
+                background: #0f1420;
+                padding: 16px
+            }
+
+            .skill-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-top: 8px
+            }
+
+            .skill {
+                padding: 8px 10px;
+                border-radius: 999px;
+                background: #0f1420;
+                border: 1px solid var(--line);
+                font-size: 13px
+            }
+
+
+            /* Contact */
+            #contact .cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+                gap: 16px;
+                margin-top: 12px;
+            }
+
+            .contact-card {
+                background: #161b22;
+                border: 1px solid #30363d;
+                border-radius: 12px;
+                padding: 16px;
+            }
+
+                .contact-card a {
+                    color: #00ffae;
+                }
+
+            .contact-form {
+                margin-top: 20px;
+                background: #161b22;
+                border: 1px solid #30363d;
+                border-radius: 12px;
+                padding: 20px;
+            }
+
+            .form-row {
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+
+            input, textarea, button {
+                width: 100%;
+                padding: 10px 12px;
+                border-radius: 8px;
+                border: 1px solid #30363d;
+                background: #0d1117;
+                color: #e6edf3;
+            }
+
+            textarea {
+                min-height: 110px;
+                resize: vertical;
+            }
+
+            button {
+                background: #00ffae;
+                color: #111;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+                button:hover {
+                    background: #00d294;
+                }
+
+            footer {
+                text-align: center;
+                padding: 22px;
+                background: #161b22;
+                color: #8b949e;
+            }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="left"><a href="#hero">Zulfiqar Younus</a></div>
+        <div class="right">
+            <a href="https://www.upwork.com/freelancers/~0121aec3dcd4c05127" target="_blank" class="btn-hire">Hire Me</a>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1EI7L4E_dlXVVrecPydrCpmJSqvqUEqPT" class="btn-resume">Download Resume</a>
+        </div>
+    </nav>
+
+
+
+
+
+    <!-- Hero -->
+    <section id="hero">
+        <div class="hero-card">
+            <p class="hero-tags">UNITY 3D • GAMEPLAY • OPTIMIZATION</p>
+            <h1>Hi, I’m <span class="highlight">Zulfiqar Younus</span> — Unity 3D Developer creating immersive games for PC, Mobile, WebGL, VR &amp; multiplayer. </h1>
+            <p class="hero-desc">
+                I develop scalable gameplay systems with optimized performance, integrating animations, audio, VFX, and physics while ensuring efficient memory usage. Skilled in 3D math and intuitive UI/UX design.
+            </p>
+
+            <div class="hero-skills">
+                <span>Unity 3D/2D (C#)</span><span>Gameplay Systems</span><span>Physics</span><span>Multiplayer Networking (Photon PUN 2, Fusion)</span>
+                <span>UI/HUD</span><span>Profiling &amp; Optimization</span><span>Ads Integration &amp; In-App Purchases (IAP)</span>
+                <span>Git/Bitbucket</span><span>PlayFab</span><span>VR (Oculus)</span><span>Cross-Platform Development (Android, iOS, PC, WebGL)</span>
+            </div>
+
+            <div class="hero-cta">
+
+                <a href="#projects" class="btn-main">🎮 View Projects</a>
+                <a href="#contact" class="btn-secondary">📧 Contact</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero -->
+
+    <div class="stats">
+        <div class="stat"><h3>7+</h3><p>Years Experience</p></div>
+        <div class="stat"><h3>20+</h3><p>Shipped/Playable Projects</p></div>
+        <div class="stat"><h3>100+</h3><p>Levels Designed</p></div>
+    </div>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+
+
+
+            <!--Meta verse-->
+            <div class="project-card">
+                <div class="thumb">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="Metaverse.webm" type="video/webm">
+                        <source src="Metaverse.mp4" type="video/mp4">
+
+                        <img src="Metaverse.webp" alt="Metaverse preview">
+                        <!-- Fallback image if video doesn't load -->
+
+                    </video>
+                </div>
+                <h3>Deloitte Metaverse</h3>
+                <p>A browser-based multiplayer metaverse for seamless social interaction, avatar customization, and real-time exploration.</p>
+                <div class="btn-group">
+                    <!--  <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.hexasort.number.puzzle.brain.games&amp;pli=1" target="_blank">📱 Play Store</a> -->
+                    <a class="btn-icon" href="https://www.youtube.com/watch?v=0j6Qgadrls4" target="_blank">▶️ Video</a>
+                </div>
+                <div class="tags">
+                    <span>Unity 3D</span>
+                    <span>Multiplayer</span>
+                    <span>Metaverse</span>
+                    <span>WebGL</span>
+                </div>
+            </div>
+
+
+
+            <!--bad granny 2-->
+            <div class="project-card">
+                <div class="thumb">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="badgranny2.webm" type="video/webm">
+                        <source src="badgranny2.mp4" type="video/mp4">
+
+                        <img src="badgranny2.webp" alt="Bad Granny 2 preview">
+
+                    </video>
+                </div>
+                <h3>Bad Granny Chapter 2</h3>
+                <p>A suspenseful horror puzzle game where you solve challenges and stealthily evade a deadly family across multiple acts.</p>
+                <div class="btn-group">
+                    <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.tryfoot.bad.granny.chapter2&hl=en" target="_blank">📱 Play Store</a>
+                    <a class="btn-icon" href="https://www.youtube.com/watch?v=ZCgDwJ8JpV0&t=13s" target="_blank">▶️ Video</a>
+                </div>
+                <div class="tags">
+                    <span>Unity 3D</span>
+                    <span>Puzzle</span>
+                    <span>Visual Effects</span>
+                    <span>Mobile</span>
+                </div>
+            </div>
+
+
+
+            <!--Forest survival 2-->
+            <div class="project-card">
+                <div class="thumb">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="ForestSurvival.webm" type="video/webm">
+                        <source src="ForestSurvival.mp4" type="video/mp4">
+
+                        <img src="ForestSurvival.webp" alt="Forest Survival preview">
+
+                    </video>
+                </div>
+                <h3>Forest Survival 2</h3>
+                <p>A 3D survival game where you gather resources, craft tools and explore dangerous islands to survive.</p>
+                <div class="btn-group">
+                    <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.tryfoot.raft.survival.forest" target="_blank">📱 Play Store</a>
+                    <a class="btn-icon" href="https://www.youtube.com/watch?v=Re21-Ifdw7U" target="_blank">▶️ Video</a>
+                </div>
+                <div class="tags">
+                    <span>Unity 3D</span>
+                    <span>Crafting</span>
+                    <span>Open World</span>
+                    <span>Item Management</span>
+                </div>
+            </div>
+
+
+            <!--Big foot hunting 2-->
+            <div class="project-card">
+                <div class="thumb">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="Bigfoot2.webm" type="video/webm">
+                        <source src="Bigfoot2.mp4" type="video/mp4">
+
+                        <img src="Bigfoot2.webp" alt="Big Foot 2 preview">
+
+                    </video>
+                </div>
+                <h3>Bigfoot 2 Online</h3>
+                <p>A 3D hunting game where you track and hunt monsters and wildlife. Featuring both solo and multiplayer modes.</p>
+                <div class="btn-group">
+                    <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.nanobyte.bigfoot.online.two&hl=en" target="_blank">📱 Play Store</a>
+                    <a class="btn-icon" href="https://www.youtube.com/watch?v=C-Y4gb-nWaw" target="_blank">▶️ Video</a>
+                </div>
+                <div class="tags">
+                    <span>Unity 3D</span>
+                    <span>Multiplayer</span>
+                    <span>Hunting</span>
+                    <span>AI</span>
+                </div>
+            </div>
+
+
+            <!--Pet cake shop-->
+            <div class="project-card">
+                <div class="thumb">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="PetCakeShop.webm" type="video/webm">
+                        <source src="PetCakeShop.mp4" type="video/mp4">
+
+                        <img src="PetCakeShop.webp" alt="Pet Cake Shop preview">
+
+                    </video>
+                </div>
+                <h3>Pet Cake Shop</h3>
+                <p>A 2.5D shop simulator where you manage, customize, and repair a bakery with interactive mini‑games.</p>
+                <div class="btn-group">
+                    <a class="btn-icon" href="https://www.youtube.com/watch?v=WP5svwuedwU" target="_blank">▶️ Video</a>
+                </div>
+                <div class="tags">
+                    <span>Unity 2D</span>
+                    <span>Management</span>
+                    <span>MiniGames</span>
+
+                </div>
+            </div>
+
+
+
+            <!--Monster Truck-->
+            <div class="project-card">
+                <div class="thumb">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="MonsterTruck.webm" type="video/webm">
+                        <source src="MonsterTruck.mp4" type="video/mp4">
+
+                        <img src="MonsterTruck.webp" alt="Monster Truck preview">
+
+                    </video>
+                </div>
+                <h3>Monster Truck</h3>
+                <p>Drive monster trucks through challenging 3D courses while managing collision limits to survive.</p>
+                <div class="btn-group">
+                    <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.tryfoot.monstertruck.driving&hl=en" target="_blank">📱 Play Store</a>
+                    <a class="btn-icon" href="https://www.youtube.com/watch?v=UPXV2mAdKjk" target="_blank">▶️ Video</a>
+                </div>
+                <div class="tags">
+                    <span>Unity 3D</span>
+                    <span>Driving</span>
+                    <span>Android</span>
+
+                </div>
+            </div>
+
+            <!--bad granny crazy pranks-->
+            <div class="project-card">
+                <div class="thumb">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="CrazzyPranks.webm" type="video/webm">
+                        <source src="CrazzyPranks.mp4" type="video/mp4">
+
+                        <img src="CrazzyPranks.webp" alt="Crazzy Pranks preview">
+
+                    </video>
+                </div>
+                <h3>Crazy Prank</h3>
+                <p>A 3D prank game where you set up and escape hilarious traps in timed, level-based challenges.</p>
+                <div class="btn-group">
+                    <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.tryfoot.bad.granny.prank3d&hl=en" target="_blank">📱 Play Store</a>
+                    <a class="btn-icon" href="https://www.youtube.com/watch?v=kiUWBd8lWSs" target="_blank">▶️ Video</a>
+                </div>
+                <div class="tags">
+                    <span>Unity 3D</span>
+                    <span>Casual</span>
+                    <span>Timeline</span>
+
+                </div>
+            </div>
+
+            <!--Renovate house with jojo-->
+            <div class="project-card">
+                <div class="thumb">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="RenovateHouse.webm" type="video/webm">
+                        <source src="RenovateHouse.mp4" type="video/mp4">
+
+                        <img src="RenovateHouse.webp" alt="RenovateHouse preview">
+
+                    </video>
+                </div>
+                <h3>Renovate House</h3>
+                <p>A relaxing 3D renovation simulator where you clean, customize, and furnish houses with complete design freedom.</p>
+                <div class="btn-group">
+                    <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.nanohead.home.designing&hl=en" target="_blank">📱 Play Store</a>
+                    <a class="btn-icon" href="https://www.youtube.com/watch?v=f1SGHVZPwrs" target="_blank">▶️ Video</a>
+                </div>
+                <div class="tags">
+                    <span>Unity 3D</span>
+                    <span>Renovation</span>
+                    <span>Android</span>
+
+                </div>
+            </div>
+
+
+            <!--Nail saloon-->
+            <div class="project-card">
+                <div class="thumb">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="NailSaloon.webm" type="video/webm">
+                        <source src="NailSaloon.mp4" type="video/mp4">
+
+                        <img src="NailSaloon.webp" alt="NailSaloon preview">
+
+                    </video>
+                </div>
+                <h3>Nail Salon</h3>
+                <p>A creative 2D nail salon game where you match designs by painting, patterning, and placing stickers with precision.</p>
+                <div class="btn-group">
+                  
+                    <a class="btn-icon" href="https://www.youtube.com/watch?v=aK4g6OGEazo" target="_blank">▶️ Video</a>
+                </div>
+                <div class="tags">
+                    <span>Unity 2D</span>
+                    <span>Casual</span>
+                    <span>Android</span>
+
+                </div>
+            </div>
+
+
+
+
+            <!--
+            div class="project-card">
+    <div class="thumb"><img src="bike.gif" alt="Preview"></div>
+    <h3>High-Performance Bike Racer</h3>
+    <p>3D racing systems, physics, camera, UI/HUD, and profiling.</p>
+    <div class="btn-group">
+        <a class="btn-icon" href="https://apkcombo.com/ar/trails-bike-race-racing-games/com.epicgames.motobike.trafficracer.bikeracing.bikeracegames.free/" target="_blank">📱 Download</a>
+        <a class="btn-icon" href="https://youtu.be/O_pl-TAtxHU?si=qYwp-eQUMjDRCS0L" target="_blank">▶️ Video</a>
+    </div>
+    <div class="tags"><span>Unity</span><span>Racing</span><span>Optimization</span></div>
+    </div>
+
+
+
+
+            <div class="project-card">
+                <div class="thumb"><img src="Dialogues.png" alt="Preview"></div>
+
+                <h3>2D Educational RPG</h3>
+                <p>Cutscenes, quiz combat, PlayFab cloud saves &amp; auth.</p>
+                <div class="btn-group">
+                    <a class="btn-icon" href="https://amerchoudhury.itch.io/crescent-chronicles-prototype-v2" target="_blank">🎮 Itch</a>
+                    <a class="btn-icon" href="https://youtu.be/kMPPdmt0_aY?si=may8bAqHB796IcKt" target="_blank">▶️ Video</a>
+                </div>
+                <div class="tags"><span>Unity</span><span>2D</span><span>PlayFab</span></div>
+            </div>
+
+                 -->
+
+
+        </div>
+    </section>
+
+    <!-- Experience -->
+                    <section id="experience">
+                        <h2>Professional Experience</h2>
+                        <div class="timeline">
+                            <div>
+                                <h4>Senior Software Engineer — Meraki Matrix</h4>
+                                <p><em>March 2025 – Present</em></p>
+                                <p>Designed, developed, and maintained WebGL and PC games using Unity while collaborating closely with team members and clients to gather requirements and provide regular progress updates. Implemented game features and mechanics based on client feedback, ensured code quality through reviews and optimization, and actively contributed to sprint planning and continuous improvement of development workflows.</p>
+                            </div>
+                            <div>
+                                <h4>Senior Software Engineer — Fog Technologies</h4>
+                                <p><em>Feb 2019 – Dec 2024</em></p>
+                                <p>Led a team of developers while remaining actively involved in hands-on development, providing technical guidance and support to designers and developers to improve productivity and quality. Oversaw the complete game development lifecycle, from initial concept through final release.</p>
+                            </div>
+                            <div>
+                                <h4>Software Engineer — Galassia Studios</h4>
+                                <p><em>Aug 2017 – Jan 2019</em></p>
+                                <p>Delivered high-quality games within strict timelines while supervising junior developers and providing them with ongoing technical guidance and support.</p>
+                            </div>
+                            <div>
+                                <h4>Game Developer — Tapinator</h4>
+                                <p><em>June 2016 – July 2017</em></p>
+                                <p>Developed mobile games and ensured the timely delivery of polished final builds while maintaining high quality standards and collaborating closely with QA teams to support thorough testing and refinement.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Skills -->
+                    <section id="skills" class="container">
+                        <h2 class="section-title"><i class="fa-solid fa-screwdriver-wrench"></i> Skills &amp; Tools</h2>
+                        <div class="skill-groups">
+                            <div class="skill-card reveal">
+                                <strong>Game Dev</strong>
+                                <div class="tags">
+                                    <span>Unity 3D</span>
+                                    <span class="skill">C#</span>
+                                    <span class="skill">Gameplay Systems</span>
+                                    <span class="skill">Multiplayer Networking</span>
+                                    <span class="skill">Physics</span>
+                                    <span class="skill">Cameras</span>
+                                    <span class="skill">Timeline & Cinematics</span>
+                                    <span class="skill">UI/HUD</span>
+                                    <span class="skill">VFX Integration</span>
+                                    <span class="skill">ScriptableObject Architecture</span>
+                                    <span class="skill">Event Systems</span>
+                                    <span class="skill">AI & Navigation</span>
+                                    <span class="skill">Behavior Trees</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-card reveal">
+                                <strong>Optimization &amp; QA</strong>
+
+                                <div class="tags">
+                                    <span>Profiling</span>
+                                    <span>Memory</span>
+                                    <span>Build Size</span>
+                                    <span>Bugfixing</span>
+                                    <span>Playtesting</span>
+                                    <span>AssetBundle Management</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-card reveal">
+                                <strong>Pipelines</strong>
+                                <div class="tags">
+                                    <span>Git</span><span>Bitbucket</span>
+                                    <span>Agile/Scrum</span><span>Code Reviews</span>
+                                </div>
+
+
+
+                            </div>
+                            <div class="skill-card reveal">
+                                <strong>Assets &amp; Platforms</strong>
+                                <div class="tags">
+
+                                    <span class="skill">PC</span>
+                                    <span class="skill">Mobile (iOS/Android)</span>
+                                    <span class="skill">XR/VR Development</span>
+                                    <span class="skill">PlayFab &amp; Firebase</span>
+                                    <span class="skill">Web GL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <!-- Education -->
+                    <section id="education">
+                        <h2>Education</h2>
+                        <div class="timeline">
+                            <div>
+                                <h4>BS Software Engineering</h4>
+                                <p>Lahore Garrison University (LGU), Pakistan — <em>2012–2016</em></p>
+                                <p>Capstone: A 3D Unity game blending FPS and sniping gameplay. Features seamless weapon switching with realistic physics.</p>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+                    <!-- Contact -->
+                    <section id="contact">
+                        <h2>Contact</h2>
+                        <p>If you’d like to collaborate or hire me for your next game, reach out below.</p>
+
+                        <div class="cards">
+                            <div class="contact-card">
+                                <h3>📧 Email</h3>
+                                <p><a id="emailLink" href="mailto:zulfiqaryounus@gmail.com">zulfiqaryounus@gmail.com</a></p>
+                                <button onclick="copyEmail()">Copy Email</button>
+                            </div>
+                            <div class="contact-card">
+                                <h3>💼 Upwork</h3>
+                                <p><a class="btn-hire">Start Contract</a></p>
+                                <button onclick="window.open('https://www.upwork.com/freelancers/~0121aec3dcd4c05127', '_blank')">Hire Now</button>
+
+                            </div>
+                            <div class="contact-card">
+                                <h3>📋 Resume</h3>
+                                <p><a class="btn-hire">Download Resume</a></p>
+                                <button onclick="window.location.href='https://drive.google.com/uc?export=download&amp;id=1EI7L4E_dlXVVrecPydrCpmJSqvqUEqPT';">Download</button>
+
+                            </div>
+                        </div>
+
+                        <div class="contact-form">
+                            <h3>Send a quick message</h3>
+                            <div class="form-row">
+                                <input id="nameInput" type="text" placeholder="Your name">
+                                <input id="subjectInput" type="text" placeholder="Subject">
+                            </div>
+                            <textarea id="messageInput" placeholder="Your message"></textarea>
+                            <div style="margin-top:12px;">
+                                <button onclick="sendMail()">Send</button>
+                            </div>
+                            <p style="margin-top:10px; font-size:13px; color:#8b949e;">This uses <code>mailto:</code> to open your email client.</p>
+                        </div>
+                    </section>
+
+
+
+                    <script>
+                        function copyEmail() {
+                            const email = "zulfiqaryounus@gmail.com";
+                            navigator.clipboard.writeText(email).then(() => {
+                                alert("Email copied: " + email);
+                            });
+                        }
+
+                        function sendMail() {
+                            const name = encodeURIComponent(document.getElementById('nameInput').value || '');
+                            const subject = encodeURIComponent(document.getElementById('subjectInput').value || 'Project Inquiry');
+                            const body = encodeURIComponent(
+                                (document.getElementById('messageInput').value || '') +
+                                (name ? `\n\n— ${name}` : '')
+                            );
+
+                            const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=zulfiqaryounus@gmail.com&su=${subject}&body=${body}`;
+                            window.open(gmailLink, '_blank'); // opens in new tab
+                        }
+
+                    </script>
+                    <footer>
+                        <p>© 2026 Zulfiqar Younus</p>
+                    </footer>
+
+
+</body>
+</html>
