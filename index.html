@@ -1,1006 +1,197 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghazanfar Ali Game Developer </title>
-    <style>
-            /* Reset */
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
-            body {
-                font-family: Arial, sans-serif;
-                line-height: 1.6;
-                background: #0d1117;
-                color: #e6edf3;
-            }
-
-            a {
-                text-decoration: none;
-                color: inherit;
-            }
-
-            img, iframe {
-                max-width: 100%;
-                border-radius: 10px;
-            }
-
-            /* Navbar */
-            nav {
-                position: sticky;
-                top: 0;
-                z-index: 1000;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 12px 20px;
-                background: #161b22;
-                color: #fff;
-                border-bottom: 1px solid #30363d;
-                backdrop-filter: saturate(120%) blur(6px);
-            }
-
-                nav .left a {
-                    font-size: 20px;
-                    font-weight: bold;
-                    color: #00ffae;
-                }
-
-                nav .right a {
-                    margin-left: 15px;
-                    padding: 8px 14px;
-                    border-radius: 6px;
-                    font-size: 14px;
-                    transition: 0.3s;
-                }
-
-                nav .btn-hire {
-                    background: #00ffae;
-                    color: #111;
-                }
-
-                    nav .btn-hire:hover {
-                        background: #00cc88;
-                    }
-
-                nav .btn-resume {
-                    background: #30363d;
-                    color: #fff;
-                }
-
-                    nav .btn-resume:hover {
-                        background: #444;
-                    }
-
-            /* Sections */
-            section {
-                padding: 60px 20px;
-                max-width: 1100px;
-                margin: auto;
-            }
-
-            h1, h2, h3 {
-                margin-bottom: 20px;
-                font-weight: bold;
-            }
-
-            h1 {
-                font-size: 42px;
-            }
-
-            h2 {
-                font-size: 28px;
-                color: #00ffae;
-            }
-
-            h3 {
-                color: #00ffae;
-            }
-
-            /* Hero */
-            /*  #hero{text-align:center; padding:100px 20px;}
-        #hero p{max-width:700px; margin:auto; font-size:18px; color:#c9d1d9;}*/
-
-            .stats {
-                display: flex;
-                justify-content: center;
-                gap: 30px;
-                margin-top: 30px;
-                flex-wrap: wrap;
-            }
-
-            .stat {
-                background: #161b22;
-                padding: 20px 30px;
-                border-radius: 10px;
-                text-align: center;
-                min-width: 150px;
-                border: 1px solid #30363d;
-            }
-
-                .stat h3 {
-                    font-size: 24px;
-                    margin-bottom: 5px;
-                    color: #00ffae;
-                }
-            /* Hero Card */
-            .hero-card {
-                background: #161b22;
-                border: 1px solid #30363d;
-                border-radius: 16px;
-                padding: 40px;
-                max-width: 900px;
-                margin: auto;
-                box-shadow: 0 0 25px rgba(0,0,0,0.5);
-                text-align: left;
-            }
-
-            .hero-tags {
-                font-size: 14px;
-                color: #00ffae;
-                letter-spacing: 1px;
-                margin-bottom: 14px;
-            }
-
-            .hero-card h1 {
-                font-size: 32px;
-                line-height: 1.3;
-                margin-bottom: 20px;
-            }
-
-            .hero-card .highlight {
-                border-bottom: 2px solid #00ffae;
-            }
-
-            .hero-desc {
-                font-size: 16px;
-                color: #c9d1d9;
-                margin-bottom: 20px;
-            }
-
-            .hero-skills {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-                margin-bottom: 25px;
-            }
-
-                .hero-skills span {
-                    background: #21262d;
-                    color: #e6edf3;
-                    padding: 6px 12px;
-                    border-radius: 20px;
-                    font-size: 13px;
-                }
-
-            .hero-cta a {
-                display: inline-block;
-                margin-right: 12px;
-                padding: 10px 18px;
-                border-radius: 8px;
-                font-weight: bold;
-                font-size: 14px;
-            }
-
-            .btn-main {
-                background: #00ffae;
-                color: #111;
-            }
-
-                .btn-main:hover {
-                    background: #00d294;
-                }
-
-            .btn-secondary {
-                background: #30363d;
-                color: #e6edf3;
-            }
-
-                .btn-secondary:hover {
-                    background: #444;
-                }
-
-
-
-
-
-
-            /* Projects */
-            .projects-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-                gap: 20px;
-                margin-top: 20px;
-            }
-
-            .project-card {
-                background: #161b22;
-                padding: 20px;
-                border-radius: 12px;
-                border: 1px solid #30363d;
-                transition: 0.3s;
-            }
-
-                .project-card:hover {
-                    transform: translateY(-4px);
-                    border-color: #00ffae;
-                }
-
-            .project-icon {
-                font-size: 32px;
-                margin-bottom: 10px;
-            }
-
-            .project-card p {
-                color: #c9d1d9;
-            }
-
-            .tags {
-                margin-top: 10px;
-            }
-
-                .tags span {
-                    display: inline-block;
-                    margin: 3px;
-                    padding: 4px 10px;
-                    background: #21262d;
-                    border-radius: 20px;
-                    font-size: 12px;
-                    color: #00ffae;
-                }
-
-            .btn-group {
-                margin-top: 12px;
-            }
-
-            .btn-icon {
-                display: inline-block;
-                margin: 4px;
-                padding: 6px 12px;
-                font-size: 14px;
-                background: #21262d;
-                color: #00ffae;
-                border-radius: 6px;
-                transition: 0.3s;
-            }
-
-                .btn-icon:hover {
-                    background: #00ffae;
-                    color: #111;
-                }
-
-            .thumb {
-                height: 160px;
-                background: linear-gradient(120deg, rgba(122,162,255,.18), rgba(99,230,190,.18)), linear-gradient(180deg, #12192a, #0f1420);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 46px;
-                color: #9db8ff;
-                border-bottom: 1px solid var(--line)
-            }
-
-                .thumb img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover; /* ensures the gif fills the frame without distortion */
-                }
-
-        .project-card .thumb video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            border-radius: 10px;
-        }
-
-        .project-card .thumb {
-            overflow: hidden;
-            position: relative;
-            /* Your existing .thumb styles remain */
-            height: 160px;
-            background: linear-gradient(120deg, rgba(122,162,255,.18), rgba(99,230,190,.18)), linear-gradient(180deg, #12192a, #0f1420);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 46px;
-            color: #9db8ff;
-            border-bottom: 1px solid var(--line);
-        }
-
-
-            /* Timeline */
-            .timeline {
-                border-left: 3px solid #00ffae;
-                margin-left: 15px;
-                padding-left: 20px;
-            }
-
-                .timeline div {
-                    margin-bottom: 25px;
-                }
-
-                .timeline h4 {
-                    margin-bottom: 6px;
-                    color: #e6edf3;
-                }
-
-                .timeline p {
-                    color: #c9d1d9;
-                }
-
-            /* Skills */
-            .skill-groups {
-                display: grid;
-                grid-template-columns: repeat(2,1fr);
-                gap: 14px
-            }
-
-            .skill-card {
-                border: 1px solid var(--line);
-                border-radius: 12px;
-                background: #0f1420;
-                padding: 16px
-            }
-
-            .skill-list {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px;
-                margin-top: 8px
-            }
-
-            .skill {
-                padding: 8px 10px;
-                border-radius: 999px;
-                background: #0f1420;
-                border: 1px solid var(--line);
-                font-size: 13px
-            }
-
-
-            /* Contact */
-            #contact .cards {
-                display: grid;
-                grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-                gap: 16px;
-                margin-top: 12px;
-            }
-
-            .contact-card {
-                background: #161b22;
-                border: 1px solid #30363d;
-                border-radius: 12px;
-                padding: 16px;
-            }
-
-                .contact-card a {
-                    color: #00ffae;
-                }
-
-            .contact-form {
-                margin-top: 20px;
-                background: #161b22;
-                border: 1px solid #30363d;
-                border-radius: 12px;
-                padding: 20px;
-            }
-
-            .form-row {
-                display: flex;
-                gap: 12px;
-                flex-wrap: wrap;
-            }
-
-            input, textarea, button {
-                width: 100%;
-                padding: 10px 12px;
-                border-radius: 8px;
-                border: 1px solid #30363d;
-                background: #0d1117;
-                color: #e6edf3;
-            }
-
-            textarea {
-                min-height: 110px;
-                resize: vertical;
-            }
-
-            button {
-                background: #00ffae;
-                color: #111;
-                font-weight: bold;
-                cursor: pointer;
-            }
-
-                button:hover {
-                    background: #00d294;
-                }
-
-            footer {
-                text-align: center;
-                padding: 22px;
-                background: #161b22;
-                color: #8b949e;
-            }
-    </style>
+    <meta name="theme-color" content="#101714">
+    <title>Ghazanfar Ali | Senior Unity Game Developer</title>
+    <meta name="description" content="Ghazanfar Ali is a Senior Unity Game Developer with 7+ years of experience in mobile games, WebGL, multiplayer, vehicle physics, monetization, and PlayWorks / Luna playable ads.">
+    <link rel="canonical" href="https://ghazanfargamedev.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ghazanfar Ali | Senior Unity Game Developer">
+    <meta property="og:description" content="Unity games, multiplayer experiences, mobile titles, and playable ads. Based in Lahore, Pakistan. Currently at GamEmpires.">
+    <meta property="og:url" content="https://ghazanfargamedev.github.io/">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Person","name":"Ghazanfar Ali","jobTitle":"Senior Game Developer","url":"https://ghazanfargamedev.github.io/","email":"mailto:mailtoghazanfar@gmail.com","worksFor":{"@type":"Organization","name":"GamEmpires"},"sameAs":["https://github.com/GhazanfarGameDev","https://www.linkedin.com/in/ghazanfar-ali-726873100/"],"knowsAbout":["Unity","C#","Game Development","WebGL","Multiplayer","Playable Ads"]}
+    </script>
 </head>
 <body>
-
-    <!-- Navbar -->
-    <nav>
-        <div class="left"><a href="#hero">Ghazanfar Ali</a></div>
-        <div class="right">
-            <!-- <a href="https://www.upwork.com/freelancers/~01245ff52927917d86" target="_blank" class="btn-hire">Hire Me</a> -->
-            <a href="https://drive.google.com/uc?export=download&id=1a_PRzIJ8BUanw6m6LgSLAOue3NRT9FfB" class="btn-resume">Download Resume</a>
-            <a href="https://github.com/GhazanfarGameDev" target="_blank" class="btn-resume">GitHub</a>
-        </div>
-    </nav>
-
-
-
-
-
-    <!-- Hero -->
-    <section id="hero">
-        <div class="hero-card">
-            <p class="hero-tags">Game Developer</p>
-            <h1>Hi, I’m <span class="highlight">Ghazanfar Ali</span> — Unity Game Developer specializing in multiplayer, physics-based gameplay, and performance optimization.</h1>
-            <p class="hero-desc">
-            I build high-performance 3D games using Unity, focusing on smooth gameplay, realistic physics, and
-            scalable multiplayer systems. I have shipped multiple mobile and PC titles and can quickly turn ideas into polished playable experiences.
-            </p>
-
-            <div class="hero-skills">
-                <span>Unity 3D/2D (C#)</span><span>Gameplay Systems</span><span>Physics</span><span>Multiplayer Networking (Photon Fusion, Socket.io, Mirror)</span>
-                <span>UI/HUD</span><span>Profiling &amp; Optimization</span><span>Ads Integration &amp; In-App Purchases (IAP)</span>
-                <span>Git/Bitbucket</span><span>Rest API</span><span>JSON</span><span>Node.js</span><span>Sequalize</span><span>OAuth</span><span>SSO</span>
-                <span>Amazon S3</span><span>Cross-Platform Development (Android, iOS, PC, WebGL)</span>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <nav class="nav container" aria-label="Main navigation">
+            <a class="brand" href="#hero" aria-label="Ghazanfar Ali, home"><span class="brand-mark" aria-hidden="true">GA<span>.</span></span><span>Ghazanfar Ali</span></a>
+            <div class="nav-links"><a href="#projects">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
+            <a class="button button-small button-outline" href="assets/Ghazanfar_Ali_Modern_Game_Developer_Resume.pdf" download>Download resume <span aria-hidden="true">↓</span></a>
+        </nav>
+    </header>
+    <main id="main">
+        <section id="hero" class="hero container" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Senior Game Developer · Lahore, Pakistan</p>
+                <h1 id="hero-title">Ghazanfar Ali<span class="accent">.</span><br><span class="hero-subtitle">I build games<br>ready for the real world.</span></h1>
+                <p class="hero-desc">7+ years building high-performance 2D/3D games with Unity and C#. I specialize in multiplayer, realistic vehicle physics, smooth gameplay, and performance optimization—turning ideas into polished mobile, PC, and WebGL experiences.</p>
+                <p class="hero-desc hero-addition">My production work also covers mobile monetization and lightweight PlayWorks / Luna playable ads.</p>
+                <div class="hero-cta"><a class="button button-primary" href="#projects">Explore my work ↗</a><a class="button button-outline" href="assets/Ghazanfar_Ali_Modern_Game_Developer_Resume.pdf" download>Download resume ↓</a></div>
+                <div class="hero-platforms" aria-label="Development platforms"><span>Android</span><span>iOS</span><span>PC</span><span>WebGL</span></div>
             </div>
-
-            <div class="hero-cta">
-
-                <a href="#projects" class="btn-main">🎮 View Projects</a>
-                <a href="#contact" class="btn-secondary">📧 Contact</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hero -->
-
-    <div class="stats">
-        <div class="stat"><h3>7+</h3><p>Years Experience</p></div>
-        <div class="stat"><h3>20+</h3><p>Shipped/Playable Projects</p></div>
-        <div class="stat"><h3>100+</h3><p>Levels Designed</p></div>
-    </div>
-
-    <!-- Projects -->
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        <div class="projects-grid">
-
-
-
-            <!--Meta verse-->
-            <div class="project-card">
-                <div class="thumb">
-                    <video autoplay muted loop playsinline preload="metadata">
-                        <source src="Metaverse.webm" type="video/webm">
-                        <source src="Metaverse.mp4" type="video/mp4">
-
-                        <img src="Metaverse.webp" alt="Metaverse preview">
-                        <!-- Fallback image if video doesn't load -->
-
-                    </video>
-                </div>
-                <h3>Deloitte Metaverse</h3>
-                <p>A browser-based multiplayer metaverse for seamless social interaction, avatar customization, and real-time exploration.</p>
-                <div class="btn-group">
-                    <!--  <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.hexasort.number.puzzle.brain.games&amp;pli=1" target="_blank">📱 Play Store</a> -->
-                    <a class="btn-icon" href="https://www.youtube.com/watch?v=Hdd7I7ZjZjI" target="_blank">▶️ Video</a>
-                </div>
-                <div class="tags">
-                    <span>Unity 3D</span>
+            <aside class="focus-card" aria-label="Current role and specialties">
+                <div class="focus-header"><span class="eyebrow">Currently building at</span><span class="status-pill">Present</span></div>
+                <h2>GamEmpires</h2><p class="focus-role">Senior Game Developer<br><span>April 2026 — Present</span></p>
+                <div class="focus-divider"></div><p class="small-label">From gameplay to production</p>
+                <ul class="focus-list">
+                    <li><span class="focus-number">01</span><div><strong>Gameplay &amp; physics</strong><p>Vehicle controls, AI, and game systems</p></div></li>
+                    <li><span class="focus-number">02</span><div><strong>Connected experiences</strong><p>Photon Fusion 2, Mirror, and backend APIs</p></div></li>
+                    <li><span class="focus-number">03</span><div><strong>Mobile &amp; playable ads</strong><p>Production delivery, monetization, and Luna</p></div></li>
+                </ul>
+                <div class="focus-footer"><span>Unity / C#</span><span>Mobile · WebGL · PC</span></div>
+            </aside>
+        </section>
+        <div class="stats container" aria-label="Portfolio highlights"><div class="stat"><strong>7+</strong><span>Years experience</span></div><div class="stat"><strong>20+</strong><span>Shipped / playable projects</span></div><div class="stat"><strong>100+</strong><span>Levels designed</span></div></div>
+        <section id="projects" class="section container" aria-labelledby="projects-title">
+            <div class="section-heading"><div><p class="eyebrow">Selected work</p><h2 id="projects-title">Games &amp; interactive experiences<span class="accent">.</span></h2></div><p>Multiplayer worlds, mobile games, learning experiences, and browser-ready playables.</p></div>
+            <div class="project-filters" role="group" aria-label="Filter projects" hidden>
+                <button type="button" class="filter-button active" data-filter="all" aria-pressed="true">All work</button><button type="button" class="filter-button" data-filter="multiplayer" aria-pressed="false">Multiplayer</button><button type="button" class="filter-button" data-filter="mobile" aria-pressed="false">Mobile games</button><button type="button" class="filter-button" data-filter="playable" aria-pressed="false">Playable ads</button><button type="button" class="filter-button" data-filter="interactive" aria-pressed="false">Apps &amp; prototypes</button>
+            </div><p id="project-status" class="sr-only" aria-live="polite"></p>
+            <div class="projects-grid"><article class="project-card" data-category="multiplayer"><div class="thumb"><video controls playsinline preload="none" poster="assets/previews/metaverse.jpg" aria-label="Deloitte Metaverse gameplay"><source src="Metaverse.mp4" type="video/mp4">Your browser does not support video. <a href="Metaverse.mp4">Download gameplay video</a>.</video></div><div class="project-body"><p class="project-kicker">Multiplayer · WebGL</p><h3>Deloitte Metaverse</h3><p>A browser-based multiplayer metaverse for seamless social interaction, avatar customization, and real-time exploration. Built as an office and meeting simulation for Deloitte Japan, including networked interactions, backend integration, and in-project video streaming.</p><div class="tags"><span>Unity 3D</span>
                     <span>Multiplayer (Photon Fusion)</span>
                     <span>REST APIs</span>
-                    <!-- <span>Metaverse</span> -->
-                    <span>WebGL</span>
-                </div>
-            </div>
-            <!--Gnome-->
-            <div class="project-card">
-                <div class="thumb">
-                    <video autoplay muted loop playsinline preload="metadata">
-                        <source src="GnomeWArsPortFolio.webm" type="video/webm">
-                        <source src="GnomeWArsPortFolio.mp4" type="video/mp4">
 
-                        <img src="GnomeWArsPortFolio.webp" alt="Gnome Wars preview">
-
-                    </video>
-                </div>
-                <h3>Gnome Wars</h3>
-                <p>Take aim as a pint-sized gnome in epic suburban shootouts. Blast, shatter, and rule the turf in the most whimsical FPS of the year.</p>
-                <div class="btn-group">
-                    <a class="btn-icon" href="https://gnomewars.io/" target="_blank">📱 Website</a>
-                    <a class="btn-icon" href="https://www.youtube.com/watch?v=epUb9LLYnxU" target="_blank">▶️ Video</a>
-                </div>
-                <div class="tags">
-                    <span>Unity 3D</span>
+                    <span>WebGL</span></div><div class="project-links"><a href="https://www.youtube.com/watch?v=Hdd7I7ZjZjI" target="_blank" rel="noopener noreferrer">Video</a></div></div></article>
+<article class="project-card" data-category="multiplayer"><div class="thumb"><video controls playsinline preload="none" poster="assets/previews/gnome-wars.jpg" aria-label="Gnome Wars gameplay"><source src="GnomeWArsPortFolio.mp4" type="video/mp4">Your browser does not support video. <a href="GnomeWArsPortFolio.mp4">Download gameplay video</a>.</video></div><div class="project-body"><p class="project-kicker">Multiplayer · WebGL</p><h3>Gnome Wars</h3><p>Take aim as a pint-sized gnome in epic suburban shootouts. Blast, shatter, and rule the turf in the most whimsical FPS of the year. Includes playable and AI gnomes, game modes, and backend-connected features.</p><div class="tags"><span>Unity 3D</span>
                     <span>Mirror</span><span>REST APIs</span><span>MySql</span>
                     <span>Multiplayer</span>
-                    <span>WebGL</span>
-                </div>
-            </div>
-            <!--Phonics-->
-            <div class="project-card">
-                <div class="thumb">
-                    <video autoplay muted loop playsinline preload="metadata">
-                        <source src="Phonics.webm" type="video/webm">
-                        <source src="Phonics.mp4" type="video/mp4">
-
-                        <img src="Phonics.webp" alt="Phonics preview">
-
-                    </video>
-                </div>
-                <h3>Phonic Zoom</h3>
-                <p>Over 30+ phonics and spelling games designed to embed key phonics, reading and spelling concepts.Takes children on a phonics and spelling journey, with an interactive map to show their progress.</p>
-                <div class="btn-group">
-                    <a class="btn-icon" href="https://www.phoniczoom.com/" target="_blank">📱 Website</a>
-                    <a class="btn-icon" href="https://www.youtube.com/watch?v=IxSuXRaBhII" target="_blank">▶️ Video</a>
-                </div>
-                <div class="tags">
-                    <span>Unity 2D</span>
+                    <span>WebGL</span></div><div class="project-links"><a href="https://gnomewars.io/" target="_blank" rel="noopener noreferrer">Website</a><a href="https://www.youtube.com/watch?v=epUb9LLYnxU" target="_blank" rel="noopener noreferrer">Video</a></div></div></article>
+<article class="project-card" data-category="playable"><div class="thumb playable-preview" aria-hidden="true"><span class="playable-symbol">▶</span><div><span class="small-label">Small build. Real gameplay.</span><strong>PlayWorks / Luna</strong><span>Unity → WebGL → Play</span></div></div><div class="project-body"><p class="project-kicker">Playable ads · Browser delivery</p><h3>PlayWorks / Luna Playable Ads</h3><p>Lightweight interactive ad experiences for vehicle selection, city driving, parking, drifting, traffic, and football gameplay. Responsive portrait and landscape UI, optimized for browser delivery.</p><div class="tags"><span>Unity</span><span>WebGL</span><span>JavaScript pipeline</span><span>PlayWorks / Luna</span></div></div></article>
+<article class="project-card" data-category="interactive"><div class="thumb"><video controls playsinline preload="none" poster="assets/previews/phonic-zoom.jpg" aria-label="Phonic Zoom gameplay"><source src="Phonics.mp4" type="video/mp4">Your browser does not support video. <a href="Phonics.mp4">Download gameplay video</a>.</video></div><div class="project-body"><p class="project-kicker">Interactive application</p><h3>Phonic Zoom</h3><p>Over 30+ phonics and spelling games designed to embed key phonics, reading and spelling concepts.Takes children on a phonics and spelling journey, with an interactive map to show their progress. Includes teacher-managed content and student result features.</p><div class="tags"><span>Unity 2D</span>
                     <span>Spelling</span>
                     <span>Learning App</span>
-                    <span>REST APIs</span>
-                </div>
-            </div>
-            <!-- Project 4: Soccer & Football Games 2026 -->
-            <div class="project-card">
-                <div class="thumb">
-                    <img src="https://play-lh.googleusercontent.com/CzbSNLMd7aILnYNBbbEjBSn80BQvsSgcxnyGalhJdmE6BoxxkcbVrtk6vZeYNOJGMd_0BvAW_t9ddcKe-DrusQ%3Dw526-h296" alt="Soccer & Football Games 2026 preview">
-                </div>
-                <h3>Soccer &amp; Football Games 2026</h3>
-                <p>A football game focused on realistic matches, smooth controls, tournaments and leagues, 3D stadium environments, multiple teams, skill moves, passing, shooting, and challenging AI opponents. The game also supports offline play.</p>
-                <div class="btn-group">
-                    <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.delta.soccer.football.league.games" target="_blank">📱 Play Store</a>
-                </div>
-                <div class="tags">
-                    <span>Football</span><span>Sports</span><span>3D</span><span>AI Opponents</span><span>Offline</span>
-                </div>
-            </div>
-
-            <!-- Project 5: US Bike Driving Wheelie Games -->
-            <div class="project-card">
-                <div class="thumb">
-                    <img src="https://play-lh.googleusercontent.com/FbnlUu4mvt8Du5_8QxF4qvETm3bFrdBLdgo8-ldE_JrT-cHrfPZa-jwnJVwyXbeevI3cOLhjtV5IhrgxFaF8jA%3Dw526-h296" alt="US Bike Driving Wheelie Games preview">
-                </div>
-                <h3>US Bike Driving Wheelie Games</h3>
-                <p>A motorcycle simulator featuring sports bikes, realistic bike physics, wheelies, stunts, and free-roaming city exploration. Players can ride around the city and perform motorcycle tricks.</p>
-                <div class="btn-group">
-                    <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.dtg.bike.wheelie.stunt.games" target="_blank">📱 Play Store</a>
-                </div>
-                <div class="tags">
-                    <span>Motorcycle</span><span>Driving</span><span>Wheelies</span><span>Stunts</span><span>City</span>
-                </div>
-            </div>
-
-            <!-- Project 6: Head to Ball: Soccer Games -->
-            <div class="project-card">
-                <div class="thumb">
-                    <img src="https://play-lh.googleusercontent.com/eKy6zJcz94vB_694wDYtmCDAoX6JYIPeMo-YsLISeEeltJ1i5A3OsDqRTl10mat_DSdNVUBlP8TeA1EPuEFLUoY%3Dw526-h296" alt="Head to Ball Soccer Games preview">
-                </div>
-                <h3>Head to Ball: Soccer Games</h3>
-                <p>A fast-paced 1v1 head-to-head soccer game featuring big-head football characters, skill-based controls, player customization, skill upgrades, collectible soccer balls, and offline gameplay.</p>
-                <div class="btn-group">
-                    <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.delta.headsoccer.headball.football.games" target="_blank">📱 Play Store</a>
-                </div>
-                <div class="tags">
-                    <span>Soccer</span><span>1v1</span><span>Arcade</span><span>Customization</span><span>Offline</span>
-                </div>
-            </div>
-
-            <!-- Project 7: US Real Drift Driving Car Game -->
-            <div class="project-card">
-                <div class="thumb">
-                    <img src="https://play-lh.googleusercontent.com/uwFl1OQw2PgH6Z4j21w6mEbGZW3_GUnJJrJXoyU522iM-7nCCxYBe8TJZfQMfYwqJkp_Ydl8b7q9HH1rlAuJGQ%3Dw526-h296" alt="US Real Drift Driving Car Game preview">
-                </div>
-                <h3>US Real Drift Driving Car Game</h3>
-                <p>An open-world driving game where players can switch between different vehicles, drift and race freely, explore a large open-world environment, and call for a new vehicle using the in-game mobile phone system.</p>
-                <div class="btn-group">
-                    <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.delta.team.drifting.driving.game" target="_blank">📱 Play Store</a>
-                </div>
-                <div class="tags">
-                    <span>Open World</span><span>Driving</span><span>Drifting</span><span>Racing</span><span>Vehicle Switching</span>
-                </div>
-            </div>
-
-            <!-- Project 8: City Car Drifting Driving Game -->
-            <div class="project-card">
-                <div class="thumb">
-                    <img src="https://play-lh.googleusercontent.com/3FJtnOxjQh_kd8zYRVnMCdjK4ssrChmLejOq_K838A675ZjgK_9_UUtIuJ_qdSynEhYfw1RKQWUvlwREnubj%3Dw526-h296" alt="City Car Drifting Driving Game preview">
-                </div>
-                <h3>City Car Drifting Driving Game</h3>
-                <p>An open-world city driving and drifting game with multiple cars, nitrous boost, high-speed driving, and vehicle damage and fuel management. Players can repair and refuel their vehicles while exploring the city.</p>
-                <div class="btn-group">
-                    <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.gaming.mob.city.car.drifting.driving.game" target="_blank">📱 Play Store</a>
-                </div>
-                <div class="tags">
-                    <span>Open World</span><span>Car Driving</span><span>Drifting</span><span>Nitrous</span><span>Vehicle Management</span>
-                </div>
-            </div>
-
-            <!-- Project 9: Real Bus Game 3d Bus Simulator -->
-            <div class="project-card">
-                <div class="thumb">
-                    <img src="https://play-lh.googleusercontent.com/y_HWs5IEug67j6gLkU_BZXYQDIOU9tVAbvSaHubtl-xel_zcorBEpYqFSNTuSKRKxo13LmproUSykx_06Ye-%3Dw526-h296" alt="Real Bus Game 3d Bus Simulator preview">
-                </div>
-                <h3>Real Bus Game 3D Bus Simulator</h3>
-                <p>An open-world bus driving and racing game where players can drive and park different buses, race through city roads, explore off-road areas, switch vehicles, and call for new vehicles through the in-game mobile phone.</p>
-                <div class="btn-group">
-                    <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.gaming.mob.city.bus.driving" target="_blank">📱 Play Store</a>
-                </div>
-                <div class="tags">
-                    <span>Bus Simulator</span><span>Open World</span><span>Driving</span><span>Racing</span><span>Parking</span>
-                </div>
-            </div>
-
-            <!--Photo Booth-->
-            <div class="project-card">
-                <div class="thumb">
-                    <video autoplay muted loop playsinline preload="metadata" poster="Photobooth.jpg">
-                    </video>
-                     <img src="Photobooth.jpg" alt="Photo Booth preview">
-                </div>
-                <h3>Photo Booth</h3>
-                <p>The application integrates the remove.bg API for automatic background removal.To enable photo downloads on mobile devices, the final processed image is uploaded to Cloudinary.All processed photos are also stored locally using Unity's persistent data path.
-                    Capture Photo → Preview Photo → Confirm → Background Removal → Upload Image → Generate QR Code → Share / Download
-                </p>
-                <div class="btn-group">
-                    <a class="btn-icon" href="https://github.com/GhazanfarGameDev/Photobooth-Application-with-Background-Removal-AI-Filter-" target="_blank">📱 Git URL</a>
-                    <!-- <a class="btn-icon" href="https://www.youtube.com/watch?v=C-Y4gb-nWaw" target="_blank">▶️ Video</a> -->
-                </div>
-                <div class="tags">
-                    <span>Unity 3D</span>
+                    <span>REST APIs</span></div><div class="project-links"><a href="https://www.phoniczoom.com/" target="_blank" rel="noopener noreferrer">Website</a><a href="https://www.youtube.com/watch?v=IxSuXRaBhII" target="_blank" rel="noopener noreferrer">Video</a></div></div></article>
+<article class="project-card" data-category="mobile"><div class="thumb"><img src="assets/previews/soccer-football.jpg" alt="Soccer & Football Games 2026 preview" loading="lazy" width="640" height="360"></div><div class="project-body"><p class="project-kicker">Mobile game</p><h3>Soccer &amp; Football Games 2026</h3><p>A football game focused on realistic matches, smooth controls, tournaments and leagues, 3D stadium environments, multiple teams, skill moves, passing, shooting, and challenging AI opponents. The game also supports offline play.</p><div class="tags"><span>Football</span><span>Sports</span><span>3D</span><span>AI Opponents</span><span>Offline</span></div><div class="project-links"><a href="https://play.google.com/store/apps/details?id=com.delta.soccer.football.league.games" target="_blank" rel="noopener noreferrer">Play Store</a></div></div></article>
+<article class="project-card" data-category="mobile"><div class="thumb"><img src="assets/previews/bike-wheelie.jpg" alt="US Bike Driving Wheelie Games preview" loading="lazy" width="640" height="360"></div><div class="project-body"><p class="project-kicker">Mobile game</p><h3>US Bike Driving Wheelie Games</h3><p>A motorcycle simulator featuring sports bikes, realistic bike physics, wheelies, stunts, and free-roaming city exploration. Players can ride around the city and perform motorcycle tricks.</p><div class="tags"><span>Motorcycle</span><span>Driving</span><span>Wheelies</span><span>Stunts</span><span>City</span></div><div class="project-links"><a href="https://play.google.com/store/apps/details?id=com.dtg.bike.wheelie.stunt.games" target="_blank" rel="noopener noreferrer">Play Store</a></div></div></article>
+<article class="project-card" data-category="mobile"><div class="thumb"><img src="assets/previews/head-to-ball.jpg" alt="Head to Ball Soccer Games preview" loading="lazy" width="640" height="360"></div><div class="project-body"><p class="project-kicker">Mobile game</p><h3>Head to Ball: Soccer Games</h3><p>A fast-paced 1v1 head-to-head soccer game featuring big-head football characters, skill-based controls, player customization, skill upgrades, collectible soccer balls, and offline gameplay.</p><div class="tags"><span>Soccer</span><span>1v1</span><span>Arcade</span><span>Customization</span><span>Offline</span></div><div class="project-links"><a href="https://play.google.com/store/apps/details?id=com.delta.headsoccer.headball.football.games" target="_blank" rel="noopener noreferrer">Play Store</a></div></div></article>
+<article class="project-card" data-category="mobile"><div class="thumb"><img src="assets/previews/real-drift.jpg" alt="US Real Drift Driving Car Game preview" loading="lazy" width="640" height="360"></div><div class="project-body"><p class="project-kicker">Mobile game</p><h3>US Real Drift Driving Car Game</h3><p>An open-world driving game where players can switch between different vehicles, drift and race freely, explore a large open-world environment, and call for a new vehicle using the in-game mobile phone system.</p><div class="tags"><span>Open World</span><span>Driving</span><span>Drifting</span><span>Racing</span><span>Vehicle Switching</span></div><div class="project-links"><a href="https://play.google.com/store/apps/details?id=com.delta.team.drifting.driving.game" target="_blank" rel="noopener noreferrer">Play Store</a></div></div></article>
+<article class="project-card" data-category="mobile"><div class="thumb"><img src="assets/previews/city-car.jpg" alt="City Car Drifting Driving Game preview" loading="lazy" width="640" height="360"></div><div class="project-body"><p class="project-kicker">Mobile game</p><h3>City Car Drifting Driving Game</h3><p>An open-world city driving and drifting game with multiple cars, nitrous boost, high-speed driving, and vehicle damage and fuel management. Players can repair and refuel their vehicles while exploring the city.</p><div class="tags"><span>Open World</span><span>Car Driving</span><span>Drifting</span><span>Nitrous</span><span>Vehicle Management</span></div><div class="project-links"><a href="https://play.google.com/store/apps/details?id=com.gaming.mob.city.car.drifting.driving.game" target="_blank" rel="noopener noreferrer">Play Store</a></div></div></article>
+<article class="project-card" data-category="mobile"><div class="thumb"><img src="assets/previews/bus-simulator.jpg" alt="Real Bus Game 3d Bus Simulator preview" loading="lazy" width="640" height="360"></div><div class="project-body"><p class="project-kicker">Mobile game</p><h3>Real Bus Game 3D Bus Simulator</h3><p>An open-world bus driving and racing game where players can drive and park different buses, race through city roads, explore off-road areas, switch vehicles, and call for new vehicles through the in-game mobile phone.</p><div class="tags"><span>Bus Simulator</span><span>Open World</span><span>Driving</span><span>Racing</span><span>Parking</span></div><div class="project-links"><a href="https://play.google.com/store/apps/details?id=com.gaming.mob.city.bus.driving" target="_blank" rel="noopener noreferrer">Play Store</a></div></div></article>
+<article class="project-card" data-category="interactive"><div class="thumb"><img src="Photobooth.jpg" alt="Photo Booth preview" loading="lazy" width="640" height="360"></div><div class="project-body"><p class="project-kicker">Interactive application</p><h3>Photo Booth</h3><p>The application integrates the remove.bg API for automatic background removal.To enable photo downloads on mobile devices, the final processed image is uploaded to Cloudinary.All processed photos are also stored locally using Unity's persistent data path.
+                    Capture Photo → Preview Photo → Confirm → Background Removal → Upload Image → Generate QR Code → Share / Download</p><div class="tags"><span>Unity 3D</span>
                     <span>Web Cam</span>
                     <span>Remove.bg AI</span>
                     <span>Cloudinary</span>
-                     <span>QR Code</span>
-                </div>
-            </div>
-            <!--Survival Forest 2-->
-            <div class="project-card">
-                <div class="thumb">
-                    <video autoplay muted loop playsinline preload="metadata">
-                        <source src="Survival Forest 2.webm" type="video/webm">
-                        <source src="Survival Forest 2.mp4" type="video/mp4">
-
-                    </video>
-                </div>
-                <h3>Survival Forest 2</h3>
-                <p>A 3D survival game where you gather resources, craft tools and explore dangerous islands to survive.
+                     <span>QR Code</span></div><div class="project-links"><a href="https://github.com/GhazanfarGameDev/Photobooth-Application-with-Background-Removal-AI-Filter-" target="_blank" rel="noopener noreferrer">Git URL</a></div></div></article>
+<article class="project-card" data-category="mobile"><div class="thumb"><video controls playsinline preload="none" poster="assets/previews/survival-forest-2.jpg" aria-label="Survival Forest 2 gameplay"><source src="Survival%20Forest%202.mp4" type="video/mp4">Your browser does not support video. <a href="Survival%20Forest%202.mp4">Download gameplay video</a>.</video></div><div class="project-body"><p class="project-kicker">Mobile game</p><h3>Survival Forest 2</h3><p>A 3D survival game where you gather resources, craft tools and explore dangerous islands to survive.
                     when you are trying to escape from wildland or island, you have to prey animals to maintain your health and sometime stromfall & bigfoot animals
-                     will try to hunt you to have delicious dinner so be active and don’t forget to collect health leaves to heal your health in this escape 3d survive game or survival craft game.
-                </p>
-                <div class="btn-group">
-                    <!-- <a class="btn-icon" href="https://www.youtube.com/watch?v=WP5svwuedwU" target="_blank">▶️ Video</a> -->
-                     <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.tryfoot.raft.survival.forest" target="_blank">📱 Play Store</a>                    
-                </div>
-                <div class="tags">
-                    <span>Unity 3D</span>
+                     will try to hunt you to have delicious dinner so be active and don’t forget to collect health leaves to heal your health in this escape 3d survive game or survival craft game.</p><div class="tags"><span>Unity 3D</span>
                     <span>Survival Kit</span>
-                    <span>Puzzle</span>
-
-                </div>
-            </div>
-            <!--Forest Survival Hunting-->
-            <div class="project-card">
-                <div class="thumb">
-                    <video autoplay muted loop playsinline preload="metadata">
-                        <source src="Forest Survival Hunting.webm" type="video/webm">
-                        <source src="Forest Survival Hunting.mp4" type="video/mp4">
-
-                        <img src="Forest Survival Hunting.webp" alt="Forest Survival Hunting preview">
-
-                    </video>
-                </div>
-                <h3>Forest Survival Hunting</h3>
-                <p>Forest survival hunt is action horror game where you are going to hunt monster in dark jungle. Be careful when you are going to hunt big monster because 
-                    if your get caught by deadly monster you will be dead so give preference to escape for becoming a survivor, 
-                    it’s totally up to you to survive in jungle. Its time not too afraid from horror monster because you are brave enough to hunt down big horror monster.</p>
-                <div class="btn-group">
-                    <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.tryfoot.forest.witchhunting" target="_blank">📱 Play Store</a>
-                    <!-- <a class="btn-icon" href="https://www.youtube.com/watch?v=UPXV2mAdKjk" target="_blank">▶️ Video</a> -->
-                </div>
-                <div class="tags">
-                    <span>Unity 3D</span>
+                    <span>Puzzle</span></div><div class="project-links"><a href="https://play.google.com/store/apps/details?id=com.tryfoot.raft.survival.forest" target="_blank" rel="noopener noreferrer">Play Store</a></div></div></article>
+<article class="project-card" data-category="mobile"><div class="thumb"><video controls playsinline preload="none" poster="assets/previews/forest-hunting.jpg" aria-label="Forest Survival Hunting gameplay"><source src="Forest%20Survival%20Hunting.mp4" type="video/mp4">Your browser does not support video. <a href="Forest%20Survival%20Hunting.mp4">Download gameplay video</a>.</video></div><div class="project-body"><p class="project-kicker">Mobile game</p><h3>Forest Survival Hunting</h3><p>Forest survival hunt is action horror game where you are going to hunt monster in dark jungle. Be careful when you are going to hunt big monster because
+                    if your get caught by deadly monster you will be dead so give preference to escape for becoming a survivor,
+                    it’s totally up to you to survive in jungle. Its time not too afraid from horror monster because you are brave enough to hunt down big horror monster.</p><div class="tags"><span>Unity 3D</span>
                     <span>Puzzles</span>
                     <span>Hunting</span>
-<span>Kit</span>
-                </div>
-            </div>
-            <!--Target Sniper 3D III FPS Game-->
-            <div class="project-card">
-                <div class="thumb">
-                    <video autoplay muted loop playsinline preload="metadata">
-                        <source src="Target Sniper 3D III FPS Game.webm" type="video/webm">
-                        <source src="Target Sniper 3D III FPS Game.mp4" type="video/mp4">
-
-                        <img src="Target Sniper 3D III FPS Game.webp" alt="Target Sniper 3D III FPS Game preview">
-
-                    </video>
-                </div>
-                <h3>Target Sniper 3D III FPS Game</h3>
-                <p>A thrilling 3D first-person shooter where you take on the role of a skilled sniper in intense combat scenarios.</p>
-                <div class="btn-group">
-                    <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.tryfoot.bad.granny.prank3d&hl=en" target="_blank">📱 Play Store</a>
-                    <!-- <a class="btn-icon" href="https://www.youtube.com/watch?v=kiUWBd8lWSs" target="_blank">▶️ Video</a> -->
-                </div>
-                <div class="tags">
-                    <span>Unity 3D</span>
+<span>Kit</span></div><div class="project-links"><a href="https://play.google.com/store/apps/details?id=com.tryfoot.forest.witchhunting" target="_blank" rel="noopener noreferrer">Play Store</a></div></div></article>
+<article class="project-card" data-category="mobile"><div class="thumb"><video controls playsinline preload="none" poster="assets/previews/target-sniper.jpg" aria-label="Target Sniper 3D III FPS Game gameplay"><source src="Target%20Sniper%203D%20III%20FPS%20Game.mp4" type="video/mp4">Your browser does not support video. <a href="Target%20Sniper%203D%20III%20FPS%20Game.mp4">Download gameplay video</a>.</video></div><div class="project-body"><p class="project-kicker">Mobile game</p><h3>Target Sniper 3D III FPS Game</h3><p>A thrilling 3D first-person shooter where you take on the role of a skilled sniper in intense combat scenarios.</p><div class="tags"><span>Unity 3D</span>
                     <span>FPS</span>
                     <span>Cutscenes</span>
-                    <span>Kit</span>
-                </div>
-            </div>
-            <!--Survival Forest Island-->
-            <div class="project-card">
-                <div class="thumb">
-                    <video autoplay muted loop playsinline preload="metadata">
-                        <source src="Survival Forest Island.webm" type="video/webm">
-                        <source src="Survival Forest Island.mp4" type="video/mp4">
-
-                        <img src="Survival Forest Island.webp" alt="Survival Forest Island preview">
-
-                    </video>
-                </div>
-                <h3>Survival Forest Island</h3>
-                <p>A thrilling survival game where you must gather resources, build shelter, and fend off dangerous creatures on a remote island.</p>
-                <div class="btn-group">
-                    <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.tryfoot.raft.forest.survival" target="_blank">📱 Play Store</a>
-                    <!-- <a class="btn-icon" href="https://www.youtube.com/watch?v=f1SGHVZPwrs" target="_blank">▶️ Video</a> -->
-                </div>
-                <div class="tags">
-                    <span>Unity 3D</span>
+                    <span>Kit</span></div><div class="project-links"><a href="https://play.google.com/store/apps/details?id=com.tryfoot.bad.granny.prank3d&hl=en" target="_blank" rel="noopener noreferrer">Play Store</a></div></div></article>
+<article class="project-card" data-category="mobile"><div class="thumb"><video controls playsinline preload="none" poster="assets/previews/survival-island.jpg" aria-label="Survival Forest Island gameplay"><source src="Survival%20Forest%20Island.mp4" type="video/mp4">Your browser does not support video. <a href="Survival%20Forest%20Island.mp4">Download gameplay video</a>.</video></div><div class="project-body"><p class="project-kicker">Mobile game</p><h3>Survival Forest Island</h3><p>A thrilling survival game where you must gather resources, build shelter, and fend off dangerous creatures on a remote island.</p><div class="tags"><span>Unity 3D</span>
                     <span>Survival</span>
                     <span>Puzzles</span>
-                    <span>Kit</span>
-
-                </div>
-            </div>
-            <!--Alien Attack Space Shooter-->
-            <div class="project-card">
-                <div class="thumb">
-                    <video autoplay muted loop playsinline preload="metadata">
-                        <source src="Alien Attack Space Shooter.webm" type="video/webm">
-                        <source src="Alien Attack Space Shooter.mp4" type="video/mp4">
-
-                        <img src="Alien Attack Space Shooter.webp" alt="Alien Attack Space Shooter preview">
-
-                    </video>
-                </div>
-                <h3>Alien Attack Space Shooter</h3>
-                <p>A fast-paced space shooter where you defend Earth from alien invaders in stunning 2.5D graphics.</p>
-                <div class="btn-group">
-                  <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.tryfoot.alien.space.shooter" target="_blank">📱 Play Store</a>
-                    <!-- <a class="btn-icon" href="https://www.youtube.com/watch?v=aK4g6OGEazo" target="_blank">▶️ Video</a> -->
-                </div>
-                <div class="tags">
-                    <span>Unity 2.5D</span>
+                    <span>Kit</span></div><div class="project-links"><a href="https://play.google.com/store/apps/details?id=com.tryfoot.raft.forest.survival" target="_blank" rel="noopener noreferrer">Play Store</a></div></div></article>
+<article class="project-card" data-category="mobile"><div class="thumb"><video controls playsinline preload="none" poster="assets/previews/alien-attack.jpg" aria-label="Alien Attack Space Shooter gameplay"><source src="Alien%20Attack%20Space%20Shooter.mp4" type="video/mp4">Your browser does not support video. <a href="Alien%20Attack%20Space%20Shooter.mp4">Download gameplay video</a>.</video></div><div class="project-body"><p class="project-kicker">Mobile game</p><h3>Alien Attack Space Shooter</h3><p>A fast-paced space shooter where you defend Earth from alien invaders in stunning 2.5D graphics.</p><div class="tags"><span>Unity 2.5D</span>
                     <span>Arcade</span>
-                    <span>Android</span>
-
-                </div>
-            </div>
-            <!-- Stickman Thief Simulator-->
-            <div class="project-card">
-                <div class="thumb">
-                    <video autoplay muted loop playsinline preload="metadata">
-                        <source src=" Stickman Thief Simulator.webm" type="video/webm">
-                        <source src="Stickman Thief Simulator.mp4" type="video/mp4">
-
-                        <img src="Stickman Thief Simulator.webp" alt="Stickman Thief Simulator preview">
-
-                    </video>
-                </div>
-                <h3>Stickman Thief Simulator</h3>
-                <p>A fun and engaging thief simulation game where you play as a stickman trying to steal treasures from various locations.</p>
-                <div class="btn-group">
-                  <!-- <a class="btn-icon" href="https://play.google.com/store/apps/details?id=com.tryfoot.alien.space.shooter" target="_blank">📱 Play Store</a> -->
-                    <!-- <a class="btn-icon" href="https://www.youtube.com/watch?v=aK4g6OGEazo" target="_blank">▶️ Video</a> -->
-                </div>
-                <div class="tags">
-                    <span>Unity 3D</span>
+                    <span>Android</span></div><div class="project-links"><a href="https://play.google.com/store/apps/details?id=com.tryfoot.alien.space.shooter" target="_blank" rel="noopener noreferrer">Play Store</a></div></div></article>
+<article class="project-card" data-category="mobile"><div class="thumb"><video controls playsinline preload="none" poster="assets/previews/stickman-thief.jpg" aria-label="Stickman Thief Simulator gameplay"><source src="Stickman%20Thief%20Simulator.mp4" type="video/mp4">Your browser does not support video. <a href="Stickman%20Thief%20Simulator.mp4">Download gameplay video</a>.</video></div><div class="project-body"><p class="project-kicker">Mobile game</p><h3>Stickman Thief Simulator</h3><p>A fun and engaging thief simulation game where you play as a stickman trying to steal treasures from various locations.</p><div class="tags"><span>Unity 3D</span>
                     <span>Puzzles</span>
                     <span>Android</span>
-                    <span>Kits</span>
-                </div>
-            </div>           
-
-        </div>
-    </section>
-
-                    <!-- Experience -->
-                    <section id="experience">
-                        <h2>Professional Experience</h2>
-                        <div class="timeline">
-                            <div>
-                                <h4>Senior Game Developer — GamEmpires</h4>
-                                <p><em>April 2026 – Present</em></p>
-                                <p>Currently working as a Senior Game Developer at GamEmpires.</p>
-                            </div>
-                            <div>
-                                <h4>Senior Software Engineer — Meraki Matrix</h4>
-                                <p><em>March 2025 – January 2026</em></p>
-                                <p>Designed, developed, and maintained WebGL and PC games using Unity while collaborating closely with team members and clients to gather requirements and provide regular progress updates. Implemented game features and mechanics based on client feedback, ensured code quality through reviews and optimization, and actively contributed to sprint planning and continuous improvement of development workflows.</p>
-                            </div>
-                            <div>
-                                <h4>Senior Software Engineer — CLV Technologies</h4>
-                                <p><em>Jul 2022 – Dec 2024</em></p>
-                                <p>Led a team of developers while remaining actively involved in hands-on development, providing technical guidance and support to designers and developers to improve productivity and quality. Oversaw the complete game development lifecycle, from initial concept through final release.</p>
-                            </div>
-                            <div>
-                                <h4>Senior Software Engineer — Clash Of DVLoper</h4>
-                                <p><em>May 2021 – June 2022</em></p>
-                                <p>Led a team of developers while remaining actively involved in hands-on development, providing technical guidance and support to designers and developers to improve productivity and quality. Oversaw the complete game development lifecycle, from initial concept through final release.</p>
-                            </div>
-                            <div>
-                                <h4>Software Engineer — Fog Technologies</h4>
-                                <p><em>Sep 2018 – Jan 2021</em></p>
-                                <p>Delivered high-quality games within strict timelines while supervising junior developers and providing them with ongoing technical guidance and support.</p>
-                            </div>
-                            <div>
-                                <h4>Game Developer — ICAW</h4>
-                                <p><em>June 2017 – Jan 2018</em></p>
-                                <p>Developed mobile games and ensured the timely delivery of polished final builds while maintaining high quality standards and collaborating closely with QA teams to support thorough testing and refinement.</p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Skills -->
-                    <section id="skills" class="container">
-                        <h2 class="section-title"><i class="fa-solid fa-screwdriver-wrench"></i> Skills &amp; Tools</h2>
-                        <div class="skill-groups">
-                            <div class="skill-card reveal">
-                                <strong>Game Dev</strong>
-                                <div class="tags">
+                    <span>Kits</span></div></div></article>
+<article class="project-card" data-category="interactive"><div class="thumb prototype-preview" aria-hidden="true"><span class="crosshair"></span><div><span class="small-label">Gameplay prototype</span><strong>DemoFPS</strong></div></div><div class="project-body"><p class="project-kicker">Prototype · First-person shooter</p><h3>DemoFPS Game Prototype</h3><p>A first-person shooter prototype from my collection of games and gameplay experiments.</p><div class="tags"><span>Gameplay</span><span>FPS</span><span>Prototyping</span></div></div></article></div>
+        </section>
+        <section id="expertise" class="section container" aria-labelledby="expertise-title">
+            <div class="section-heading"><div><p class="eyebrow">Production experience</p><h2 id="expertise-title">Beyond the core loop<span class="accent">.</span></h2></div><p>The systems that help a game perform, progress, and reach players.</p></div>
+            <div class="expertise-grid">
+                <article class="expertise-card"><span class="card-number">01 / Monetization</span><h3>Built for mobile production</h3><p>Banners, interstitials, rewarded ads, MREC, app-open ads, mediation, and in-app purchases.</p><p class="detail">Google AdMob · AppLovin MAX · Unity IAP · Google UMP · ByteBrew · Solar Engine</p></article>
+                <article class="expertise-card"><span class="card-number">02 / Gameplay systems</span><h3>Progression that connects</h3><p>Configurable vehicle controls, game progression, save/load flows, daily rewards, tutorials, and mobile UI.</p><p class="detail">Vehicle physics · AI &amp; navigation · UI/HUD · Game architecture</p></article>
+                <article class="expertise-card"><span class="card-number">03 / Browser performance</span><h3>Small builds, smooth play</h3><p>WebGL and playable build optimization for bundle size, runtime memory, supported APIs, physics cost, and mobile-browser responsiveness.</p><p class="detail">PlayWorks / Luna · Unity Profiler · Addressables · WebGL</p></article>
+            </div>
+        </section>
+        <section id="experience" class="section container" aria-labelledby="experience-title">
+            <div class="section-heading"><div><p class="eyebrow">My journey</p><h2 id="experience-title">Professional experience<span class="accent">.</span></h2></div><p>Hands-on development, technical leadership, and production delivery since 2017.</p></div>
+            <div class="timeline"><article class="timeline-item current"><div class="timeline-date">April 2026 – Present<span class="status-pill">Current role</span></div><div class="timeline-content"><h3>Senior Game Developer</h3><p class="company">GamEmpires</p><p>Currently working as a Senior Game Developer at GamEmpires. Unity game development with a focus on mobile production, gameplay systems, platform delivery, and playable-ad workflows.</p></div></article>
+<article class="timeline-item"><div class="timeline-date">March 2025 – January 2026</div><div class="timeline-content"><h3>Senior Software Engineer</h3><p class="company">Meraki Metrix <span>(innov8.jp)</span></p><p>Designed, developed, and maintained WebGL and PC games using Unity while collaborating closely with team members and clients to gather requirements and provide regular progress updates. Implemented game features and mechanics based on client feedback, ensured code quality through reviews and optimization, and actively contributed to sprint planning and continuous improvement of development workflows. Additional work includes WebGL and mobile optimization, secure authentication flows, low-latency multiplayer with Photon Fusion 2, and contributions to a Deloitte Japan project.</p></div></article>
+<article class="timeline-item"><div class="timeline-date">Jul 2022 – Dec 2024</div><div class="timeline-content"><h3>Senior Software Engineer</h3><p class="company">CLV Technologies <span>/ Salvay</span></p><p>Led a team of developers while remaining actively involved in hands-on development, providing technical guidance and support to designers and developers to improve productivity and quality. Oversaw the complete game development lifecycle, from initial concept through final release. Developed Unity mobile and WebGL experiences, integrated Mirror multiplayer and WebGL authentication, and collaborated across engineering, design, and product teams.</p></div></article>
+<article class="timeline-item"><div class="timeline-date">April 2022 – July 2022</div><div class="timeline-content"><h3>Team Lead</h3><p class="company">Fog Revolution</p><p>Led gameplay development, code reviews, mentoring, and production troubleshooting.</p></div></article>
+<article class="timeline-item"><div class="timeline-date">May 2021 – June 2022</div><div class="timeline-content"><h3>Senior Software Engineer</h3><p class="company">Clash Of DVLoper</p><p>Led a team of developers while remaining actively involved in hands-on development, providing technical guidance and support to designers and developers to improve productivity and quality. Oversaw the complete game development lifecycle, from initial concept through final release.</p></div></article>
+<article class="timeline-item"><div class="timeline-date">Sep 2018 – Jan 2021</div><div class="timeline-content"><h3>Software Engineer</h3><p class="company">Fog Technologies</p><p>Delivered high-quality games within strict timelines while supervising junior developers and providing them with ongoing technical guidance and support.</p></div></article>
+<article class="timeline-item"><div class="timeline-date">June 2018 – January 2021</div><div class="timeline-content"><h3>Game Developer</h3><p class="company">Fog Revolution</p><p>Developed and maintained game applications, supported testing, and contributed to timely releases.</p></div></article>
+<article class="timeline-item"><div class="timeline-date">June 2017 – Jan 2018</div><div class="timeline-content"><h3>Game Developer</h3><p class="company">ICAW</p><p>Developed mobile games and ensured the timely delivery of polished final builds while maintaining high quality standards and collaborating closely with QA teams to support thorough testing and refinement.</p></div></article></div>
+        </section>
+        <section id="skills" class="section container" aria-labelledby="skills-title">
+            <div class="section-heading"><div><p class="eyebrow">The toolkit</p><h2 id="skills-title">Skills &amp; technologies<span class="accent">.</span></h2></div><p>Tools and systems I use across gameplay, backend integration, and delivery.</p></div>
+            <div class="skill-groups"><article class="skill-card"><h3>Game Dev</h3><div class="tags">
                                     <span>Unity 3D</span>
-                                    <span class="skill">C#</span>
-                                    <span class="skill">Gameplay Systems</span>
-                                    <span class="skill">Multiplayer Networking</span>
-                                    <span class="skill">Physics</span>
-                                    <span class="skill">Cameras</span>
-                                    <span class="skill">Timeline & Cinematics</span>
-                                    <span class="skill">UI/HUD</span>
-                                    <span class="skill">VFX Integration</span>
-                                    <span class="skill">ScriptableObject Architecture</span>
-                                    <span class="skill">Event Systems</span>
-                                    <span class="skill">AI & Navigation</span>
-                                    <span class="skill">Behavior Trees</span>
-                                </div>
-                            </div>
-
-                            <div class="skill-card reveal">
-                                <strong>Optimization &amp; QA</strong>
-
-                                <div class="tags">
+                                    <span>C#</span>
+                                    <span>Gameplay Systems</span>
+                                    <span>Multiplayer Networking</span>
+                                    <span>Physics</span>
+                                    <span>Cameras</span>
+                                    <span>Timeline & Cinematics</span>
+                                    <span>UI/HUD</span>
+                                    <span>VFX Integration</span>
+                                    <span>ScriptableObject Architecture</span>
+                                    <span>Event Systems</span>
+                                    <span>AI & Navigation</span>
+                                    <span>Behavior Trees</span>
+                                </div></article>
+<article class="skill-card"><h3>Optimization &amp; QA</h3><div class="tags">
                                     <span>Profiling</span>
                                     <span>Memory</span>
                                     <span>Build Size</span>
                                     <span>Bugfixing</span>
                                     <span>Playtesting</span>
                                     <span>AssetBundle Management</span>
-                                </div>
-                            </div>
-
-                            <div class="skill-card reveal">
-                                <strong>Pipelines</strong>
-                                <div class="tags">
+                                </div></article>
+<article class="skill-card"><h3>Pipelines</h3><div class="tags">
                                     <span>Git</span><span>Bitbucket</span>
                                     <span>Agile/Scrum</span><span>Code Reviews</span>
-                                </div>
+                                </div></article>
+<article class="skill-card"><h3>Assets &amp; Platforms</h3><div class="tags">
 
-
-
-                            </div>
-                            <div class="skill-card reveal">
-                                <strong>Assets &amp; Platforms</strong>
-                                <div class="tags">
-
-                                    <span class="skill">PC</span>
-                                    <span class="skill">Mobile (iOS/Android)</span>
-                                    <span class="skill">XR/VR Development</span>
-                                    <span class="skill">PlayFab &amp; Firebase</span>
-                                    <span class="skill">Web GL</span>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-
-                    <!-- Education -->
-                    <section id="education">
-                        <h2>Education</h2>
-                        <div class="timeline">
-                            <div>
-                                <h4>BS Software Engineering</h4>
-                                <p>Lahore Garrison University (LGU), Pakistan — <em>2012–2016</em></p>
-                                <p>Capstone: A 3D Unity game blending FPS and sniping gameplay. Features seamless weapon switching with realistic physics.</p>
-                            </div>
-                        </div>
-                    </section>
-
-
-
-                    <!-- Contact -->
-                    <section id="contact">
-                        <h2>Contact</h2>
-                        <p>If you’d like to collaborate or hire me for your next game, reach out below.</p>
-
-                        <div class="cards">
-                            <div class="contact-card">
-                                <h3>📧 Email</h3>
-                                <p><a id="emailLink" href="mailto:mailtoghazanfar@gmail.com">mailtoghazanfar@gmail.com</a></p>
-                                <button onclick="copyEmail()">Copy Email</button>
-                            </div>
-                            <!-- <div class="contact-card">
-                                <h3>💼 Upwork</h3>
-                                <p><a class="btn-hire">Start Contract</a></p>
-                                <button onclick="window.open('https://www.upwork.com/freelancers/~0121aec3dcd4c05127', '_blank')">Hire Now</button>
-
-                            </div> -->
-                            <div class="contact-card">
-                                <h3>📋 Resume</h3>
-                                <p><a class="btn-hire">Download Resume</a></p>
-                                <button onclick="window.location.href='https://drive.google.com/uc?export=download&id=1a_PRzIJ8BUanw6m6LgSLAOue3NRT9FfB';">Download</button>
-
-                            </div>
-                        </div>
-
-                        <div class="contact-form">
-                            <h3>Send a quick message</h3>
-                            <div class="form-row">
-                                <input id="nameInput" type="text" placeholder="Your name">
-                                <input id="subjectInput" type="text" placeholder="Subject">
-                            </div>
-                            <textarea id="messageInput" placeholder="Your message"></textarea>
-                            <div style="margin-top:12px;">
-                                <button onclick="sendMail()">Send</button>
-                            </div>
-                            <p style="margin-top:10px; font-size:13px; color:#8b949e;">This uses <code>mailto:</code> to open your email client.</p>
-                        </div>
-                    </section>
-
-
-
-                    <script>
-                        function copyEmail() {
-                            const email = "mailtoghazanfar@gmail.com";
-                            navigator.clipboard.writeText(email).then(() => {
-                                alert("Email copied: " + email);
-                            });
-                        }
-
-                        function sendMail() {
-                            const name = encodeURIComponent(document.getElementById('nameInput').value || '');
-                            const subject = encodeURIComponent(document.getElementById('subjectInput').value || 'Project Inquiry');
-                            const body = encodeURIComponent(
-                                (document.getElementById('messageInput').value || '') +
-                                (name ? `\n\n— ${name}` : '')
-                            );
-
-                            const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=mailtoghazanfar@gmail.com&su=${subject}&body=${body}`;
-                            window.open(gmailLink, '_blank'); // opens in new tab
-                        }
-
-                    </script>
-                    <footer>
-                        <p>© 2026 Ghazanfar Ali</p>
-                    </footer>
-
-
+                                    <span>PC</span>
+                                    <span>Mobile (iOS/Android)</span>
+                                    <span>XR/VR Development</span>
+                                    <span>PlayFab &amp; Firebase</span>
+                                    <span>Web GL</span>
+                                </div></article>
+<article class="skill-card"><h3>Platforms &amp; integrations</h3><div class="tags">
+                <span>Unity 3D/2D (C#)</span><span>Gameplay Systems</span><span>Physics</span><span>Multiplayer Networking (Photon Fusion, Socket.io, Mirror)</span>
+                <span>UI/HUD</span><span>Profiling &amp; Optimization</span><span>Ads Integration &amp; In-App Purchases (IAP)</span>
+                <span>Git/Bitbucket</span><span>REST APIs</span><span>JSON</span><span>Node.js</span><span>Sequelize</span><span>OAuth</span><span>SSO</span>
+                <span>Amazon S3</span><span>Cross-Platform Development (Android, iOS, PC, WebGL)</span>
+            </div></article>
+<article class="skill-card"><h3>Engines &amp; languages</h3><div class="tags"><span>Unreal Engine</span><span>JavaScript</span><span>Three.js</span></div></article>
+<article class="skill-card"><h3>Playable ads &amp; monetization</h3><div class="tags"><span>PlayWorks / Luna</span><span>Google AdMob</span><span>AppLovin MAX</span><span>Unity IAP</span><span>Google UMP</span><span>ByteBrew</span><span>Solar Engine</span></div></article>
+<article class="skill-card"><h3>Backend &amp; multiplayer</h3><div class="tags"><span>Photon Fusion 2</span><span>Mirror</span><span>Socket.io</span><span>Firebase</span><span>PlayFab</span><span>Node.js</span><span>Sequelize</span><span>REST APIs</span><span>JSON</span><span>OAuth / SSO</span><span>MySQL</span></div></article>
+<article class="skill-card"><h3>Development &amp; delivery</h3><div class="tags"><span>GitHub</span><span>Docker</span><span>Amazon S3</span><span>Unity Profiler</span><span>Addressables</span><span>Android SDK</span><span>WebGL memory optimization</span><span>Technical leadership</span></div></article></div>
+        </section>
+        <section id="education" class="section container" aria-labelledby="education-title">
+            <div class="education-card"><div><p class="eyebrow">Education · 2012–2016</p><h2 id="education-title">BS Software Engineering</h2><p class="company">Lahore Garrison University (LGU), Pakistan</p></div><p>Capstone: a 3D Unity game blending FPS and sniping gameplay, featuring seamless weapon switching and realistic physics.</p></div>
+        </section>
+        <section id="contact" class="section container" aria-labelledby="contact-title">
+            <div class="contact-panel">
+                <div class="contact-intro"><p class="eyebrow">Let's connect</p><h2 id="contact-title">Have a game<br>in mind<span class="accent">?</span></h2><p>Let's talk about gameplay, interactive experiences, or your next Unity project.</p><a class="email-link" href="mailto:mailtoghazanfar@gmail.com">mailtoghazanfar@gmail.com ↗</a><div class="contact-actions"><button id="copy-email" class="button button-outline button-small" type="button">Copy email</button><a class="button button-outline button-small" href="assets/Ghazanfar_Ali_Modern_Game_Developer_Resume.pdf" download>Resume PDF ↓</a></div><p id="copy-status" class="feedback" role="status"></p></div>
+                <div class="contact-details"><p class="small-label">Find me online</p><a href="https://www.linkedin.com/in/ghazanfar-ali-726873100/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><span aria-hidden="true">↗</span></a><a href="https://github.com/GhazanfarGameDev" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span aria-hidden="true">↗</span></a><a href="tel:+923444413192"><span>+92 344 4413192</span><span aria-hidden="true">↗</span></a><p class="contact-location">Lahore, Pakistan<br><span>Currently at GamEmpires</span></p></div>
+            </div>
+            <form id="contact-form" class="contact-form">
+                <h3>Send a quick message</h3><p>Open an email draft with your project details.</p>
+                <div class="form-row"><div><label for="name-input">Your name</label><input id="name-input" name="name" autocomplete="name" placeholder="Your name" maxlength="100"></div><div><label for="subject-input">Subject</label><input id="subject-input" name="subject" placeholder="Project inquiry" maxlength="200"></div></div>
+                <label for="message-input">Your message</label><textarea id="message-input" name="message" placeholder="Tell me a little about your project" required maxlength="5000"></textarea><button class="button button-primary" type="submit">Create email draft ↗</button>
+            </form>
+        </section>
+    </main>
+    <footer class="site-footer container"><p>© <span id="year">2026</span> Ghazanfar Ali</p><p>Unity · Gameplay · Multiplayer</p><a href="#hero">Back to top ↑</a></footer>
 </body>
 </html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ghazanfargamedev.github.io/sitemap.xml
