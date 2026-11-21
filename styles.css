@@ -94,7 +94,9 @@ h1 { font-size: clamp(36px, 4.4vw, 64px); line-height: 1.12; letter-spacing: -2.
 .project-body > p:not(.project-kicker) { color: var(--muted); font-size: 12px; line-height: 1.85; flex: 1; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
 .tags span { font-size: 10px; line-height: 1.6; color: #c3cfc4; background: #212e25; border: 1px solid #324438; border-radius: 5px; padding: 4px 8px; }
-.project-links { display: flex; flex-wrap: wrap; gap: 18px; border-top: 1px solid var(--line); margin-top: 20px; padding-top: 15px; }
+.show-more-wrap { display: flex; justify-content: center; margin-top: 30px; }
+.show-more-wrap:has(> [hidden]) { display: none; }
+.project-links {display: flex; flex-wrap: wrap; gap: 18px; border-top: 1px solid var(--line); margin-top: 20px; padding-top: 15px; }
 .project-links a { font-size: 11px; color: var(--accent); }
 .project-links a::after { content: " ↗"; }
 .project-links a:hover { text-decoration: underline; text-underline-offset: 4px; }

@@ -5,27 +5,57 @@ const filterButtons = Array.from(document.querySelectorAll(".filter-button"));
 const projectFilters = document.querySelector(".project-filters");
 const projectStatus = document.getElementById("project-status");
 
+const showMoreButton = document.getElementById("show-more-projects");
+const INITIAL_PROJECTS = 6;
+let currentFilter = "all";
+let expanded = false;
+
+function applyProjectView() {
+    let matchCount = 0;
+    let visibleCount = 0;
+    for (const card of projectCards) {
+        const matches = currentFilter === "all" || card.dataset.category.split(" ").includes(currentFilter);
+        if (matches) matchCount += 1;
+        // Only the "All work" view is long enough to need collapsing.
+        const visible = matches && (expanded || currentFilter !== "all" || matchCount <= INITIAL_PROJECTS);
+        card.hidden = !visible;
+        if (visible) visibleCount += 1;
+        else {
+            const video = card.querySelector("video");
+            if (video && !video.paused) video.pause();
+        }
+    }
+    if (showMoreButton) {
+        const hiddenCount = matchCount - visibleCount;
+        showMoreButton.hidden = hiddenCount === 0;
+        showMoreButton.textContent = `Show ${hiddenCount} more ${hiddenCount === 1 ? "project" : "projects"} ↓`;
+    }
+    return visibleCount;
+}
+
+if (showMoreButton) {
+    showMoreButton.addEventListener("click", () => {
+        const firstNewCard = projectCards.find((card) => card.hidden);
+        expanded = true;
+        const visibleCount = applyProjectView();
+        if (firstNewCard) firstNewCard.querySelector("a, button")?.focus({ preventScroll: true });
+        if (projectStatus) projectStatus.textContent = `Showing all ${visibleCount} projects.`;
+    });
+}
+applyProjectView();
+
 if (projectFilters && filterButtons.length) {
     projectFilters.hidden = false;
     for (const button of filterButtons) {
         button.addEventListener("click", () => {
-            const filter = button.dataset.filter;
-            let visibleCount = 0;
-            for (const card of projectCards) {
-                const visible = filter === "all" || card.dataset.category.split(" ").includes(filter);
-                card.hidden = !visible;
-                if (visible) visibleCount += 1;
-                else {
-                    const video = card.querySelector("video");
-                    if (video && !video.paused) video.pause();
-                }
-            }
+            currentFilter = button.dataset.filter;
+            const visibleCount = applyProjectView();
             for (const filterButton of filterButtons) {
                 const active = filterButton === button;
                 filterButton.classList.toggle("active", active);
                 filterButton.setAttribute("aria-pressed", String(active));
             }
-            projectStatus.textContent = `Showing ${visibleCount} ${visibleCount === 1 ? "project" : "projects"}: ${button.textContent}.`;
+            if (projectStatus) projectStatus.textContent = `Showing ${visibleCount} ${visibleCount === 1 ? "project" : "projects"}: ${button.textContent}.`;
         });
     }
 }
